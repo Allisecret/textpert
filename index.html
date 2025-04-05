@@ -6,8 +6,8 @@
     <title>Textpert.net - Connect with Service Providers via Text</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
@@ -179,7 +179,7 @@
                 
                 <!-- Step 1: Text for Help -->
                 <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">1</div>
+                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">1</div>
                     <div class="text-center pt-8">
                         <div class="h-24 w-24 mx-auto mb-4 relative">
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -196,7 +196,7 @@
                 
                 <!-- Step 2: Video Solutions -->
                 <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">2</div>
+                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">2</div>
                     <div class="text-center pt-8">
                         <div class="h-24 w-24 mx-auto mb-4 relative">
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -213,7 +213,7 @@
                 
                 <!-- Step 3: Live Streaming -->
                 <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">3</div>
+                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">3</div>
                     <div class="text-center pt-8">
                         <div class="h-24 w-24 mx-auto mb-4 relative">
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -231,7 +231,7 @@
                 
                 <!-- Step 4: Site Visit -->
                 <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">4</div>
+                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">4</div>
                     <div class="text-center pt-8">
                         <div class="h-24 w-24 mx-auto mb-4 relative">
                             <div class="absolute inset-0 flex items-center justify-center">
@@ -636,7 +636,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title text-white">For Service Providers</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <h3 class="text-2xl md:text-3xl font-bold mb-6">Grow Your Business With Textpert.net</h3>
                     <p class="text-lg mb-6">
@@ -683,7 +683,7 @@
                 </div>
                 
                 <div>
-                    <div class="bg-white p-8 rounded-xl shadow-2xl">
+                    <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl">
                         <div class="text-center mb-6">
                             <div class="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <i class="fas fa-toolbox text-4xl text-blue-600"></i>
@@ -692,7 +692,7 @@
                             <p class="text-gray-600">Manage your profile and customer interactions</p>
                         </div>
                         
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
                             <div class="dashboard-card bg-blue-50 p-4 rounded-lg">
                                 <div class="flex justify-between mb-2">
                                     <h4 class="font-semibold text-gray-800">New Leads</h4>
@@ -771,7 +771,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">What Our Users Say</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
                 <!-- Testimonial 1 - Consumer -->
                 <div class="testimonial-card bg-blue-50 p-6 rounded-xl relative">
                     <div class="absolute -top-4 left-6 text-5xl text-blue-200">"</div>
@@ -781,7 +781,7 @@
                             and had three qualified plumbers to choose from within an hour. So convenient!
                         </p>
                         <div class="flex items-center">
-                            <div class="h-12 w-12 bg-blue-600 rounded-full mr-4"></div>
+                            <div class="h-12 w-12 min-w-12 bg-blue-600 rounded-full mr-4"></div>
                             <div>
                                 <h4 class="font-semibold">Jessica R.</h4>
                                 <p class="text-gray-500 text-sm">Homeowner, Scottsdale</p>
@@ -799,7 +799,7 @@
                             grow my electrical business by providing quality leads that turn into loyal customers.
                         </p>
                         <div class="flex items-center">
-                            <div class="h-12 w-12 bg-green-600 rounded-full mr-4"></div>
+                            <div class="h-12 w-12 min-w-12 bg-green-600 rounded-full mr-4"></div>
                             <div>
                                 <h4 class="font-semibold">Michael T.</h4>
                                 <p class="text-gray-500 text-sm">Electrician, Phoenix</p>
@@ -817,7 +817,7 @@
                             so easy! I sent a text, got matched with a coach who understood my needs, and we're still working together.
                         </p>
                         <div class="flex items-center">
-                            <div class="h-12 w-12 bg-purple-600 rounded-full mr-4"></div>
+                            <div class="h-12 w-12 min-w-12 bg-purple-600 rounded-full mr-4"></div>
                             <div>
                                 <h4 class="font-semibold">David K.</h4>
                                 <p class="text-gray-500 text-sm">Technology Professional, Tempe</p>
@@ -992,7 +992,7 @@
             
             <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 textpert.net. All rights reserved.</p>
-                <div class="flex space-x-6">
+                <div class="flex space-x-4 md:space-x-6">
                     <a href="#terms" class="text-gray-400 hover:text-white transition">Terms of Service</a>
                     <a href="#privacy" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
                     <a href="#sitemap" class="text-gray-400 hover:text-white transition">Sitemap</a>
@@ -1035,6 +1035,9 @@
             </form>
         </div>
     </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script data-cfasync="false" src="assets/js/email-decode.min.js"></script>
 </body>
 </html>
