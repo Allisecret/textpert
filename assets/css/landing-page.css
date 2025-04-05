@@ -6,10 +6,12 @@ body {
 }
 
 .gradient-bg {
+    background: -o-linear-gradient(315deg, #2563eb 0%, #4f46e5 100%);
     background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
 }
 
 .gradient-text {
+    background: -o-linear-gradient(315deg, #2563eb 0%, #4f46e5 100%);
     background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -17,69 +19,114 @@ body {
 }
 
 .service-icon {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .service-icon:hover {
-    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
 }
 
 .cta-button {
+    background: -o-linear-gradient(315deg, #f59e0b 0%, #ef4444 100%);
     background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+            transform: translateY(-3px);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .flow-arrow {
-    animation: float 2s ease-in-out infinite;
+    -webkit-animation: float 2s ease-in-out infinite;
+            animation: float 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
 }
 
 @keyframes float {
     0% {
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
     }
     50% {
-        transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
     }
     100% {
-        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
     }
 }
 
 .communication-option {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .communication-option:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .testimonial-card {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -webkit-transform: translateY(-5px);
+        -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .step-card {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
     border-left: 4px solid #4f46e5;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(79, 70, 229, 0.05)), to(rgba(255, 255, 255, 0)));
+    background: -o-linear-gradient(left, rgba(79, 70, 229, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
     background: linear-gradient(to right, rgba(79, 70, 229, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .step-card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-left: 8px solid #4f46e5;
 }
 
 .fade-in-section {
     opacity: 1;
+    -webkit-transition: opacity 1.5s ease;
+    -o-transition: opacity 1.5s ease;
     transition: opacity 1.5s ease;
 }
 
@@ -89,9 +136,11 @@ body {
     right: 0;
     width: 600px;
     height: 600px;
+    background: -o-radial-gradient(center, circle, rgba(79, 70, 229, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
     background: radial-gradient(circle at center, rgba(79, 70, 229, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
     border-radius: 50%;
-    filter: blur(80px);
+    -webkit-filter: blur(80px);
+            filter: blur(80px);
     z-index: -1;
 }
 
@@ -99,29 +148,63 @@ body {
 /* Animation for the mobile device showing communication flow */
 
 .message-animation {
-    animation: message 8s infinite;
+    -webkit-animation: message 8s infinite;
+            animation: message 8s infinite;
+}
+
+@-webkit-keyframes message {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+                transform: translateY(20px);
+    }
+    5% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    20% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    25% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
+    }
 }
 
 @keyframes message {
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+                transform: translateY(20px);
     }
     5% {
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     20% {
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     25% {
         opacity: 0;
-        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
     }
     100% {
         opacity: 0;
-        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+                transform: translateY(-20px);
     }
 }
 
@@ -129,17 +212,21 @@ body {
 /* Custom animation delays for sequential messages */
 
 .delay-1 {
-    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
 }
 
 .delay-2 {
-    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
 }
 
 .delay-3 {
-    animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
 }
 
 .delay-4 {
-    animation-delay: 6s;
+    -webkit-animation-delay: 6s;
+            animation-delay: 6s;
 }
