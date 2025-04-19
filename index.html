@@ -7,620 +7,644 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Header -->
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center">
-                <h1 class="text-2xl sm:text-3xl font-bold text-blue-600">textpert<span class="text-gray-800">.net</span></h1>
+                <a href="/" class="text-2xl sm:text-3xl font-bold text-blue-600">textpert<span class="text-gray-800">.net</span></a>
             </div>
-            <nav class="hidden lg:flex space-x-8">
-                <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
-                <a href="#for-providers" class="text-gray-600 hover:text-blue-600 transition">For Service Providers</a>
-                <a href="#directory" class="text-gray-600 hover:text-blue-600 transition">Directory</a>
-                <a href="#faq" class="text-gray-600 hover:text-blue-600 transition">FAQ</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="#login" class="text-blue-600 hover:text-blue-800 transition font-medium">Login</a>
+
+            <div class="header_menu">
+                <div class="flex items-center justify-end lg:hidden mb-6">
+                    <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-opacity-20 transition duration-300 toggle_menu" type="button">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-6">
+                    <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition">How It Works</a>
+                    <a href="#for-providers" class="text-gray-600 hover:text-blue-600 transition">For Service Providers</a>
+                    <a href="#directory" class="text-gray-600 hover:text-blue-600 transition">Directory</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 transition">FAQ</a>
+                    <div class="flex items-center space-x-4 lg:hidden">
+                        <button class="text-blue-600 hover:text-blue-800 transition font-medium" type="button" onclick="document.getElementById('login-modal').classList.remove('hidden')">Login</button>
+                        <a href="#signup" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center space-x-4">
+                <button class="text-blue-600 hover:text-blue-800 transition font-medium" type="button" onclick="document.getElementById('login-modal').classList.remove('hidden')">Login</button>
                 <a href="#signup" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium">Sign Up</a>
+            </div>
+            <div class="lg:hidden">
+                <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-opacity-20 transition duration-300 toggle_menu">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
             </div>
         </div>
     </header>
+    <div id="backdrop" class="toggle_menu"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient text-white py-20 relative overflow-hidden">
-        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 mb-10 lg:mb-0">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 fadeInUp">Find Expert Service Providers With Just a Text</h2>
-                <p class="text-xl mb-8 fadeInUp" style="animation-delay: 0.2s;">Connect with trusted home service and life service professionals in your area through our simple text messaging platform.</p>
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white pt-20 pb-28 relative overflow-hidden">
+            <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-6">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 fadeInUp">Find Expert Service Providers With Just a Text</h2>
+                    <p class="text-xl mb-8 fadeInUp" style="animation-delay: 0.2s;">Connect with trusted home service and life service professionals in your area through our simple text messaging platform.</p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 fadeInUp" style="animation-delay: 0.4s;">
+                        <a href="sms:+4805551212" class="cta-button bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg flex items-center justify-center">
+                            <i class="fas fa-comment-dots mr-2 animated-icon"></i>
+                            Text 480-555-1212
+                        </a>
+                        <a href="#learn-more" class="border-2 border-white py-3 px-8 rounded-full text-lg hover:bg-white hover:text-blue-600 transition flex items-center justify-center">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative rotateIn">
+                    <div class="bg-white p-6 rounded-xl shadow-2xl">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="h-3 w-3 rounded-full bg-red-500"></div>
+                            <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
+                            <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                            <p class="text-gray-700 typing-animation">I need a plumber in Phoenix...</p>
+                        </div>
+                        <div class="bg-blue-100 rounded-lg p-4 ml-12 mb-4 chat-bubble">
+                            <p class="text-gray-700">Thanks for reaching out! I've found 3 highly-rated plumbers in your area. Would you like me to connect you with them?</p>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                            <p class="text-gray-700">Yes, please. I have a leaking pipe.</p>
+                        </div>
+                        <div class="bg-blue-100 rounded-lg p-4 ml-12 chat-bubble">
+                            <p class="text-gray-700">I'm connecting you with Mesa Plumbing Experts now. They'll text you shortly to discuss your issue and provide service options.</p>
+                        </div>
+                        <div class="flex justify-between mt-4">
+                            <input type="text" placeholder="Type your message..." class="bg-gray-100 rounded-full px-4 py-2 w-4/5 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700">
+                            <button class="bg-blue-600 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-bold text-sm shadow-lg transform rotate-12">
+                        Fast & Simple!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute bottom_1 left-0 w-full overflow-hidden pointer-events-none">
+                <svg class="h-60 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="block" preserveAspectRatio="none">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,202.7C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                </svg>
+            </div>
+        </section>
+    
+        <!-- Service Categories -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Find Service Providers In These Categories</h2>
                 
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 fadeInUp" style="animation-delay: 0.4s;">
-                    <a href="sms:+4805551212" class="cta-button bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg flex items-center justify-center">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 xl:gap-6">
+                    <!-- Home Services -->
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center relative">
+                        <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-home text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Plumbing</h3>
+                        <p class="text-gray-600 text-sm">Fix leaks, clogs, installations & more</p>
+                        <span class="service-badge bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Electrical</h3>
+                        <p class="text-gray-600 text-sm">Installations, repairs & upgrades</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-paint-roller text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Painting</h3>
+                        <p class="text-gray-600 text-sm">Interior & exterior painting services</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-broom text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Cleaning</h3>
+                        <p class="text-gray-600 text-sm">Residential & commercial cleaning</p>
+                    </div>
+                    
+                    <!-- Life Services -->
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heart text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Life Coaching</h3>
+                        <p class="text-gray-600 text-sm">Personal & professional development</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-dumbbell text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Fitness Training</h3>
+                        <p class="text-gray-600 text-sm">Personal training & fitness classes</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Nutrition</h3>
+                        <p class="text-gray-600 text-sm">Meal planning & nutritional advice</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
+                        <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-briefcase text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Career Coaching</h3>
+                        <p class="text-gray-600 text-sm">Resume help & interview preparation</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#view-all" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
+                        View All Categories
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">How Textpert Works</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 xl:gap-8 relative">
+                    <div class="process-line hidden lg:block"></div>
+                    
+                    <!-- Step 1: Text for Help -->
+                    <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
+                        <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">1</div>
+                        <div class="text-center pt-8">
+                            <div class="h-24 w-24 mx-auto mb-4 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-mobile-alt text-5xl text-blue-600 phone-animation"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-comment-dots text-blue-600"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Text for Help</h3>
+                            <p class="text-gray-600">Text us what service you need, and we'll connect you with top-rated providers in your area.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Video Solutions -->
+                    <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
+                        <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">2</div>
+                        <div class="text-center pt-8">
+                            <div class="h-24 w-24 mx-auto mb-4 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-video text-5xl text-blue-600"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-play text-blue-600"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Video Solutions</h3>
+                            <p class="text-gray-600">Providers can send video recordings to explain solutions and provide visual guidance.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Live Streaming -->
+                    <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
+                        <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">3</div>
+                        <div class="text-center pt-8">
+                            <div class="h-24 w-24 mx-auto mb-4 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-video text-5xl text-blue-600"></i>
+                                    <i class="fas fa-wifi absolute text-2xl text-green-500" style="right: 0; bottom: 0;"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-satellite-dish text-blue-600"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Live Streaming</h3>
+                            <p class="text-gray-600">For complex issues, providers can offer live video consultations to assess the situation.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Site Visit -->
+                    <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
+                        <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">4</div>
+                        <div class="text-center pt-8">
+                            <div class="h-24 w-24 mx-auto mb-4 relative">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <i class="fas fa-home text-5xl text-blue-600"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-tools text-blue-600"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Site Visit</h3>
+                            <p class="text-gray-600">When necessary, schedule an in-person visit to complete the service at a time that works for you.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center">
+                    <a href="sms:+4805551212" class="cta-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full text-lg inline-flex items-center">
                         <i class="fas fa-comment-dots mr-2 animated-icon"></i>
                         Text 480-555-1212
                     </a>
-                    <a href="#learn-more" class="border-2 border-white py-3 px-8 rounded-full text-lg hover:bg-white hover:text-blue-600 transition flex items-center justify-center">
-                        <i class="fas fa-info-circle mr-2"></i>
-                        Learn More
+                </div>
+            </div>
+        </section>
+    
+        <!-- Directory Preview -->
+        <section id="directory" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Featured Service Providers</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Provider 1 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-blue-600 relative">
+                            <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Mesa Plumbing Experts" class="absolute bottom-0 right-0 h-32 w-32 object-contain bg-white rounded-tl-xl p-2">
+                            <div class="absolute top-0 left-0 p-4">
+                                <span class="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Plumbing</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-4">
+                                <h3 class="text-white text-xl font-bold">Mesa Plumbing Experts</h3>
+                                <div class="flex items-center text-yellow-300 mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ml-2 text-white">(87 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-gray-600 mb-4">Residential & commercial plumbing services with 24/7 emergency service available.</p>
+                            <div class="flex items-center text-gray-500 mb-2">
+                                <i class="fas fa-map-marker-alt w-6"></i>
+                                <span>Mesa, AZ</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 mb-4">
+                                <i class="fas fa-tools w-6"></i>
+                                <span>15+ years experience</span>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="sms:+4805551212" class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
+                                    <i class="fas fa-comment-dots mr-1"></i> Text 480-555-1212
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Provider 2 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-green-600 relative">
+                            <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Life Coach Arizona" class="absolute bottom-0 right-0 h-32 w-32 object-contain bg-white rounded-tl-xl p-2">
+                            <div class="absolute top-0 left-0 p-4">
+                                <span class="bg-white text-green-600 px-3 py-1 rounded-full text-sm font-medium">Life Coaching</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-4">
+                                <h3 class="text-white text-xl font-bold">Life Coach Arizona</h3>
+                                <div class="flex items-center text-yellow-300 mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-2 text-white">(53 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-gray-600 mb-4">Professional life coaching to help you achieve your personal and career goals.</p>
+                            <div class="flex items-center text-gray-500 mb-2">
+                                <i class="fas fa-map-marker-alt w-6"></i>
+                                <span>Scottsdale, AZ</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 mb-4">
+                                <i class="fas fa-certificate w-6"></i>
+                                <span>Certified Professional Coach</span>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="sms:+4805551212" class="block text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium transition">
+                                    <i class="fas fa-comment-dots mr-1"></i> Text 480-555-1212
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Provider 3 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-red-600 relative">
+                            <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Phoenix Electrical Services" class="absolute bottom-0 right-0 h-32 w-32 object-contain bg-white rounded-tl-xl p-2">
+                            <div class="absolute top-0 left-0 p-4">
+                                <span class="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-medium">Electrical</span>
+                            </div>
+                            <div class="absolute bottom-0 left-0 p-4">
+                                <h3 class="text-white text-xl font-bold">Phoenix Electrical</h3>
+                                <div class="flex items-center text-yellow-300 mt-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ml-2 text-white">(71 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <p class="text-gray-600 mb-4">Licensed electrical contractors providing residential and commercial services.</p>
+                            <div class="flex items-center text-gray-500 mb-2">
+                                <i class="fas fa-map-marker-alt w-6"></i>
+                                <span>Phoenix, AZ</span>
+                            </div>
+                            <div class="flex items-center text-gray-500 mb-4">
+                                <i class="fas fa-id-card w-6"></i>
+                                <span>Licensed & Insured</span>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="sms:+4805551212" class="block text-center bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium transition">
+                                    <i class="fas fa-comment-dots mr-1"></i> Text 480-555-1212
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#view-all-providers" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
+                        View All Service Providers
+                        <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
-            <div class="lg:w-1/2 relative rotateIn">
-                <div class="bg-white p-6 rounded-xl shadow-2xl">
-                    <div class="flex space-x-2 mb-4">
-                        <div class="h-3 w-3 rounded-full bg-red-500"></div>
-                        <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
-                        <div class="h-3 w-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="bg-gray-100 rounded-lg p-4 mb-4">
-                        <p class="text-gray-700 typing-animation">I need a plumber in Phoenix...</p>
-                    </div>
-                    <div class="bg-blue-100 rounded-lg p-4 ml-12 mb-4 chat-bubble">
-                        <p class="text-gray-700">Thanks for reaching out! I've found 3 highly-rated plumbers in your area. Would you like me to connect you with them?</p>
-                    </div>
-                    <div class="bg-gray-100 rounded-lg p-4 mb-4">
-                        <p class="text-gray-700">Yes, please. I have a leaking pipe.</p>
-                    </div>
-                    <div class="bg-blue-100 rounded-lg p-4 ml-12 chat-bubble">
-                        <p class="text-gray-700">I'm connecting you with Mesa Plumbing Experts now. They'll text you shortly to discuss your issue and provide service options.</p>
-                    </div>
-                    <div class="flex justify-between mt-4">
-                        <input type="text" placeholder="Type your message..." class="bg-gray-100 rounded-full px-4 py-2 w-4/5 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700">
-                        <button class="bg-blue-600 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="absolute -bottom-10 -right-10 bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-bold text-sm shadow-lg transform rotate-12">
-                    Fast & Simple!
-                </div>
-            </div>
-        </div>
-        
-        <div class="absolute bottom_1 left-0 w-full overflow-hidden pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="block">
-                <path fill="#ffffff" fill-opacity="1" d="M0,224L60,213.3C120,203,240,181,360,181.3C480,181,600,203,720,202.7C840,203,960,181,1080,165.3C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Service Categories -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Find Service Providers In These Categories</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 xl:gap-8">
-                <!-- Home Services -->
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center relative">
-                    <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-home text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Plumbing</h3>
-                    <p class="text-gray-600 text-sm">Fix leaks, clogs, installations & more</p>
-                    <span class="service-badge bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Popular</span>
-                </div>
+        </section>
+    
+        <!-- Business Profile Example -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Enhanced Business Profiles</h2>
                 
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-bolt text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Electrical</h3>
-                    <p class="text-gray-600 text-sm">Installations, repairs & upgrades</p>
-                </div>
-                
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-paint-roller text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Painting</h3>
-                    <p class="text-gray-600 text-sm">Interior & exterior painting services</p>
-                </div>
-                
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-broom text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Cleaning</h3>
-                    <p class="text-gray-600 text-sm">Residential & commercial cleaning</p>
-                </div>
-                
-                <!-- Life Services -->
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heart text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Life Coaching</h3>
-                    <p class="text-gray-600 text-sm">Personal & professional development</p>
-                </div>
-                
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-dumbbell text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Fitness Training</h3>
-                    <p class="text-gray-600 text-sm">Personal training & fitness classes</p>
-                </div>
-                
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-utensils text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Nutrition</h3>
-                    <p class="text-gray-600 text-sm">Meal planning & nutritional advice</p>
-                </div>
-                
-                <div class="service-card bg-white rounded-xl shadow-lg p-4 sm:p-6 text-center">
-                    <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-briefcase text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Career Coaching</h3>
-                    <p class="text-gray-600 text-sm">Resume help & interview preparation</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#view-all" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
-                    View All Categories
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">How Textpert Works</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 xl:gap-8 relative">
-                <div class="process-line hidden lg:block"></div>
-                
-                <!-- Step 1: Text for Help -->
-                <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">1</div>
-                    <div class="text-center pt-8">
-                        <div class="h-24 w-24 mx-auto mb-4 relative">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i class="fas fa-mobile-alt text-5xl text-blue-600 phone-animation"></i>
-                            </div>
-                            <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-comment-dots text-blue-600"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Text for Help</h3>
-                        <p class="text-gray-600">Text us what service you need, and we'll connect you with top-rated providers in your area.</p>
-                    </div>
-                </div>
-                
-                <!-- Step 2: Video Solutions -->
-                <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">2</div>
-                    <div class="text-center pt-8">
-                        <div class="h-24 w-24 mx-auto mb-4 relative">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i class="fas fa-video text-5xl text-blue-600"></i>
-                            </div>
-                            <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-play text-blue-600"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Video Solutions</h3>
-                        <p class="text-gray-600">Providers can send video recordings to explain solutions and provide visual guidance.</p>
-                    </div>
-                </div>
-                
-                <!-- Step 3: Live Streaming -->
-                <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">3</div>
-                    <div class="text-center pt-8">
-                        <div class="h-24 w-24 mx-auto mb-4 relative">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i class="fas fa-video text-5xl text-blue-600"></i>
-                                <i class="fas fa-wifi absolute text-2xl text-green-500" style="right: 0; bottom: 0;"></i>
-                            </div>
-                            <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-satellite-dish text-blue-600"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Live Streaming</h3>
-                        <p class="text-gray-600">For complex issues, providers can offer live video consultations to assess the situation.</p>
-                    </div>
-                </div>
-                
-                <!-- Step 4: Site Visit -->
-                <div class="step-card bg-white rounded-xl shadow-lg p-6 relative">
-                    <div class="h-12 w-12 min-w-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">4</div>
-                    <div class="text-center pt-8">
-                        <div class="h-24 w-24 mx-auto mb-4 relative">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <i class="fas fa-home text-5xl text-blue-600"></i>
-                            </div>
-                            <div class="absolute -top-2 -right-2 h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-tools text-blue-600"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3">Site Visit</h3>
-                        <p class="text-gray-600">When necessary, schedule an in-person visit to complete the service at a time that works for you.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16 text-center">
-                <a href="sms:+4805551212" class="cta-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full text-lg inline-flex items-center">
-                    <i class="fas fa-comment-dots mr-2 animated-icon"></i>
-                    Text 480-555-1212
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Directory Preview -->
-    <section id="directory" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Featured Service Providers</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Provider 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 bg-blue-600 relative">
-                        <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Mesa Plumbing Experts" class="absolute bottom-0 right-0 h-32 w-32 object-contain bg-white rounded-tl-xl p-2">
-                        <div class="absolute top-0 left-0 p-4">
-                            <span class="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Plumbing</span>
-                        </div>
-                        <div class="absolute bottom-0 left-0 p-4">
-                            <h3 class="text-white text-xl font-bold">Mesa Plumbing Experts</h3>
-                            <div class="flex items-center text-yellow-300 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ml-2 text-white">(87 reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Residential & commercial plumbing services with 24/7 emergency service available.</p>
-                        <div class="flex items-center text-gray-500 mb-2">
-                            <i class="fas fa-map-marker-alt w-6"></i>
-                            <span>Mesa, AZ</span>
-                        </div>
-                        <div class="flex items-center text-gray-500 mb-4">
-                            <i class="fas fa-tools w-6"></i>
-                            <span>15+ years experience</span>
-                        </div>
-                        <a href="sms:+4805551212" class="block text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
-                            <i class="fas fa-comment-dots mr-1"></i> Text 480-555-1212
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Provider 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 bg-green-600 relative">
-                        <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Life Coach Arizona" class="absolute bottom-0 right-0 h-32 w-32 object-contain bg-white rounded-tl-xl p-2">
-                        <div class="absolute top-0 left-0 p-4">
-                            <span class="bg-white text-green-600 px-3 py-1 rounded-full text-sm font-medium">Life Coaching</span>
-                        </div>
-                        <div class="absolute bottom-0 left-0 p-4">
-                            <h3 class="text-white text-xl font-bold">Life Coach Arizona</h3>
-                            <div class="flex items-center text-yellow-300 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ml-2 text-white">(53 reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Professional life coaching to help you achieve your personal and career goals.</p>
-                        <div class="flex items-center text-gray-500 mb-2">
-                            <i class="fas fa-map-marker-alt w-6"></i>
-                            <span>Scottsdale, AZ</span>
-                        </div>
-                        <div class="flex items-center text-gray-500 mb-4">
-                            <i class="fas fa-certificate w-6"></i>
-                            <span>Certified Professional Coach</span>
-                        </div>
-                        <a href="sms:+4805551212" class="block text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium transition">
-                            <i class="fas fa-comment-dots mr-1"></i> Text 480-555-1212
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Provider 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div class="h-48 bg-red-600 relative">
-                        <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Phoenix Electrical Services" class="absolute bottom-0 right-0 h-32 w-32 object-contain bg-white rounded-tl-xl p-2">
-                        <div class="absolute top-0 left-0 p-4">
-                            <span class="bg-white text-red-600 px-3 py-1 rounded-full text-sm font-medium">Electrical</span>
-                        </div>
-                        <div class="absolute bottom-0 left-0 p-4">
-                            <h3 class="text-white text-xl font-bold">Phoenix Electrical</h3>
-                            <div class="flex items-center text-yellow-300 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ml-2 text-white">(71 reviews)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Licensed electrical contractors providing residential and commercial services.</p>
-                        <div class="flex items-center text-gray-500 mb-2">
-                            <i class="fas fa-map-marker-alt w-6"></i>
-                            <span>Phoenix, AZ</span>
-                        </div>
-                        <div class="flex items-center text-gray-500 mb-4">
-                            <i class="fas fa-id-card w-6"></i>
-                            <span>Licensed & Insured</span>
-                        </div>
-                        <a href="sms:+4805551212" class="block text-center bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-medium transition">
-                            <i class="fas fa-comment-dots mr-1"></i> Text 480-555-1212
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#view-all-providers" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition">
-                    View All Service Providers
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Business Profile Example -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Enhanced Business Profiles</h2>
-            
-            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-                <!-- Profile Header -->
-                <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-6 md:p-8 relative">
-                    <div class="flex flex-col md:flex-row">
-                        <div class="md:w-1/4 mb-6 md:mb-0">
-                            <div class="h-32 w-32 bg-white rounded-full overflow-hidden border-4 border-white shadow-lg">
-                                <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Mesa Plumbing Experts" class="h-full w-full object-cover">
-                            </div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <div class="flex flex-col xl:flex-row justify-between">
-                                <div>
-                                    <h3 class="text-3xl font-bold text-white mb-2">Mesa Plumbing Experts</h3>
-                                    <div class="flex items-center mb-4">
-                                        <div class="flex items-center text-yellow-300 mr-4">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <span class="ml-2 text-white font-medium">4.8</span>
-                                        </div>
-                                        <span class="text-white">(87 reviews)</span>
-                                    </div>
-                                    <div class="flex flex-wrap gap-2 mb-4">
-                                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Plumbing</span>
-                                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Water Heaters</span>
-                                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Drain Cleaning</span>
-                                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Leak Detection</span>
-                                    </div>
-                                </div>
-                                <div class="mt-4 md:mt-0">
-                                    <a href="sms:+4805551212" class="cta-button bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg inline-flex items-center shadow-lg">
-                                        <i class="fas fa-comment-dots mr-2"></i>
-                                        Text 480-555-1212
-                                    </a>
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                    <!-- Profile Header -->
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-6 md:p-8 relative">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/4 mb-6 md:mb-0">
+                                <div class="h-32 w-32 bg-white rounded-full overflow-hidden border-4 border-white shadow-lg">
+                                    <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/home-assistant.png" alt="Mesa Plumbing Experts" class="h-full w-full object-cover">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Profile Navigation -->
-                <div class="border-b">
-                    <div class="container mx-auto px-6 md:px-8">
-                        <div class="flex overflow-x-auto">
-                            <button class="profile-tab active px-6 py-4 font-medium">Overview</button>
-                            <button class="profile-tab px-6 py-4 font-medium text-gray-600">Services</button>
-                            <button class="profile-tab px-6 py-4 font-medium text-gray-600">Gallery</button>
-                            <button class="profile-tab px-6 py-4 font-medium text-gray-600">Reviews</button>
-                            <button class="profile-tab px-6 py-4 font-medium text-gray-600">FAQ</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Profile Content -->
-                <div class="p-6 md:p-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <!-- Left Column -->
-                        <div class="lg:col-span-2">
-                            <div class="mb-8">
-                                <h4 class="text-xl font-semibold mb-4">About Mesa Plumbing Experts</h4>
-                                <p class="text-gray-600 mb-4">
-                                    Mesa Plumbing Experts has been serving the Phoenix metropolitan area for over 15 years. 
-                                    Our team of licensed and insured plumbers is committed to providing high-quality plumbing services 
-                                    for both residential and commercial clients.
-                                </p>
-                                <p class="text-gray-600">
-                                    We specialize in all aspects of plumbing, from small repairs to complete repiping and new installations. 
-                                    Our 24/7 emergency service ensures that we're always available when you need us most.
-                                </p>
-                            </div>
-                            
-                            <div class="mb-8">
-                                <h4 class="text-xl font-semibold mb-4">Our Services</h4>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div class="flex items-start">
-                                        <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                                            <i class="fas fa-wrench text-blue-600"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-medium mb-1">Plumbing Repairs</h5>
-                                            <p class="text-gray-600 text-sm">Fix leaks, clogs, broken pipes, and more</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                                            <i class="fas fa-shower text-blue-600"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-medium mb-1">Bathroom Remodeling</h5>
-                                            <p class="text-gray-600 text-sm">Upgrade fixtures and plumbing for your bathroom</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                                            <i class="fas fa-fire text-blue-600"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-medium mb-1">Water Heater Services</h5>
-                                            <p class="text-gray-600 text-sm">Installation, repair, and maintenance</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
-                                            <i class="fas fa-tint-slash text-blue-600"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="font-medium mb-1">Drain Cleaning</h5>
-                                            <p class="text-gray-600 text-sm">Professional solutions for clogged drains</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Customer Reviews</h4>
-                                <div class="space-y-4">
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <div class="flex justify-between mb-2">
-                                            <div class="flex items-center">
-                                                <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                                    <span class="text-blue-600 font-medium">JD</span>
-                                                </div>
-                                                <div>
-                                                    <h5 class="font-medium">John D.</h5>
-                                                    <div class="flex text-yellow-400 text-sm">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                    </div>
-                                                </div>
+                            <div class="md:w-3/4">
+                                <div class="flex flex-col xl:flex-row justify-between">
+                                    <div>
+                                        <h3 class="text-3xl font-bold text-white mb-2">Mesa Plumbing Experts</h3>
+                                        <div class="flex items-center mb-4">
+                                            <div class="flex items-center text-yellow-300 mr-4">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                                <span class="ml-2 text-white font-medium">4.8</span>
                                             </div>
-                                            <span class="text-gray-500 text-sm">2 weeks ago</span>
+                                            <span class="text-white">(87 reviews)</span>
                                         </div>
-                                        <p class="text-gray-600">
-                                            Excellent service! They responded quickly to my emergency call and fixed my leaking pipe. 
-                                            The plumber was professional, courteous, and explained everything before starting work.
-                                        </p>
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Plumbing</span>
+                                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Water Heaters</span>
+                                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Drain Cleaning</span>
+                                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Leak Detection</span>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="bg-gray-50 rounded-lg p-4">
-                                        <div class="flex justify-between mb-2">
-                                            <div class="flex items-center">
-                                                <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                                    <span class="text-blue-600 font-medium">SM</span>
-                                                </div>
-                                                <div>
-                                                    <h5 class="font-medium">Sarah M.</h5>
-                                                    <div class="flex text-yellow-400 text-sm">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star-half-alt"></i>
-                                                    </div>
-                                                </div>
+                                    <div class="mt-4 md:mt-0">
+                                        <a href="sms:+4805551212" class="cta-button bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg inline-flex items-center shadow-lg">
+                                            <i class="fas fa-comment-dots mr-2"></i>
+                                            Text 480-555-1212
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Navigation -->
+                    <div class="border-b">
+                        <div class="container mx-auto px-6 md:px-8">
+                            <div class="flex overflow-x-auto">
+                                <button class="profile-tab active px-6 py-4 font-medium">Overview</button>
+                                <button class="profile-tab px-6 py-4 font-medium text-gray-600">Services</button>
+                                <button class="profile-tab px-6 py-4 font-medium text-gray-600">Gallery</button>
+                                <button class="profile-tab px-6 py-4 font-medium text-gray-600">Reviews</button>
+                                <button class="profile-tab px-6 py-4 font-medium text-gray-600">FAQ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8" data-tab-content="overview">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <!-- Left Column -->
+                            <div class="lg:col-span-2">
+                                <div class="mb-8">
+                                    <h4 class="text-xl font-semibold mb-4">About Mesa Plumbing Experts</h4>
+                                    <p class="text-gray-600 mb-4">
+                                        Mesa Plumbing Experts has been serving the Phoenix metropolitan area for over 15 years. 
+                                        Our team of licensed and insured plumbers is committed to providing high-quality plumbing services 
+                                        for both residential and commercial clients.
+                                    </p>
+                                    <p class="text-gray-600">
+                                        We specialize in all aspects of plumbing, from small repairs to complete repiping and new installations. 
+                                        Our 24/7 emergency service ensures that we're always available when you need us most.
+                                    </p>
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <h4 class="text-xl font-semibold mb-4">Our Services</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="flex items-start">
+                                            <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                <i class="fas fa-wrench text-blue-600"></i>
                                             </div>
-                                            <span class="text-gray-500 text-sm">1 month ago</span>
+                                            <div>
+                                                <h5 class="font-medium mb-1">Plumbing Repairs</h5>
+                                                <p class="text-gray-600 text-sm">Fix leaks, clogs, broken pipes, and more</p>
+                                            </div>
                                         </div>
-                                        <p class="text-gray-600">
-                                            Mesa Plumbing installed a new water heater for us and did a fantastic job. 
-                                            They were upfront about the costs and completed the work on schedule. 
-                                            I would definitely use their services again.
-                                        </p>
+                                        <div class="flex items-start">
+                                            <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                <i class="fas fa-shower text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-medium mb-1">Bathroom Remodeling</h5>
+                                                <p class="text-gray-600 text-sm">Upgrade fixtures and plumbing for your bathroom</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                <i class="fas fa-fire text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-medium mb-1">Water Heater Services</h5>
+                                                <p class="text-gray-600 text-sm">Installation, repair, and maintenance</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start">
+                                            <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                                <i class="fas fa-tint-slash text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="font-medium mb-1">Drain Cleaning</h5>
+                                                <p class="text-gray-600 text-sm">Professional solutions for clogged drains</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <div class="mt-4">
-                                    <a href="#all-reviews" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
-                                        View all 87 reviews
-                                        <i class="fas fa-chevron-right ml-2 text-sm"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right Column -->
-                        <div>
-                            <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                                <h4 class="text-lg font-semibold mb-4">Contact Information</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-start">
-                                        <i class="fas fa-map-marker-alt w-5 text-blue-600 mt-1"></i>
-                                        <div class="ml-3">
-                                            <p class="text-gray-800">1234 E Main Street</p>
-                                            <p class="text-gray-800">Mesa, AZ 85205</p>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-4">Customer Reviews</h4>
+                                    <div class="space-y-4">
+                                        <div class="bg-gray-50 rounded-lg p-4">
+                                            <div class="flex justify-between mb-2">
+                                                <div class="flex items-center">
+                                                    <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                                        <span class="text-blue-600 font-medium">JD</span>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="font-medium">John D.</h5>
+                                                        <div class="flex text-yellow-400 text-sm">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-gray-500 text-sm">2 weeks ago</span>
+                                            </div>
+                                            <p class="text-gray-600">
+                                                Excellent service! They responded quickly to my emergency call and fixed my leaking pipe. 
+                                                The plumber was professional, courteous, and explained everything before starting work.
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="bg-gray-50 rounded-lg p-4">
+                                            <div class="flex justify-between mb-2">
+                                                <div class="flex items-center">
+                                                    <div class="h-10 w-10 min-w-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                                        <span class="text-blue-600 font-medium">SM</span>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="font-medium">Sarah M.</h5>
+                                                        <div class="flex text-yellow-400 text-sm">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star-half-alt"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="text-gray-500 text-sm">1 month ago</span>
+                                            </div>
+                                            <p class="text-gray-600">
+                                                Mesa Plumbing installed a new water heater for us and did a fantastic job. 
+                                                They were upfront about the costs and completed the work on schedule. 
+                                                I would definitely use their services again.
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-clock w-5 text-blue-600"></i>
-                                        <div class="ml-3">
-                                            <p class="text-gray-800">Mon-Fri: 7am-7pm</p>
-                                            <p class="text-gray-800">Sat: 8am-5pm</p>
-                                            <p class="text-green-600 font-medium">24/7 Emergency Service</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-globe w-5 text-blue-600"></i>
-                                        <a href="#website" class="ml-3 text-blue-600 hover:text-blue-800">www.mesaplumbing.com</a>
+                                    
+                                    <div class="mt-4">
+                                        <a href="#all-reviews" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                                            View all 87 reviews
+                                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                                <h4 class="text-lg font-semibold mb-4">Credentials</h4>
-                                <div class="space-y-3">
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check-circle w-5 text-green-600"></i>
-                                        <span class="ml-3 text-gray-800">Licensed Plumber</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check-circle w-5 text-green-600"></i>
-                                        <span class="ml-3 text-gray-800">Insured & Bonded</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check-circle w-5 text-green-600"></i>
-                                        <span class="ml-3 text-gray-800">BBB Accredited A+</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <i class="fas fa-check-circle w-5 text-green-600"></i>
-                                        <span class="ml-3 text-gray-800">15+ Years Experience</span>
+                            <!-- Right Column -->
+                            <div>
+                                <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                                    <h4 class="text-lg font-semibold mb-4">Contact Information</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-start">
+                                            <i class="fas fa-map-marker-alt w-5 text-blue-600 mt-1"></i>
+                                            <div class="ml-3">
+                                                <p class="text-gray-800">1234 E Main Street</p>
+                                                <p class="text-gray-800">Mesa, AZ 85205</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-clock w-5 text-blue-600"></i>
+                                            <div class="ml-3">
+                                                <p class="text-gray-800">Mon-Fri: 7am-7pm</p>
+                                                <p class="text-gray-800">Sat: 8am-5pm</p>
+                                                <p class="text-green-600 font-medium">24/7 Emergency Service</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-globe w-5 text-blue-600"></i>
+                                            <a href="#website" class="ml-3 text-blue-600 hover:text-blue-800">www.mesaplumbing.com</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="bg-gray-50 rounded-xl p-6">
-                                <h4 class="text-lg font-semibold mb-4">Service Area</h4>
-                                <div class="space-y-2">
-                                    <p class="text-gray-800">Serving the Phoenix Metro Area including:</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Mesa</span>
-                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Tempe</span>
-                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Chandler</span>
-                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Gilbert</span>
-                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Scottsdale</span>
-                                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Phoenix</span>
+                                
+                                <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                                    <h4 class="text-lg font-semibold mb-4">Credentials</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check-circle w-5 text-green-600"></i>
+                                            <span class="ml-3 text-gray-800">Licensed Plumber</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check-circle w-5 text-green-600"></i>
+                                            <span class="ml-3 text-gray-800">Insured & Bonded</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check-circle w-5 text-green-600"></i>
+                                            <span class="ml-3 text-gray-800">BBB Accredited A+</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check-circle w-5 text-green-600"></i>
+                                            <span class="ml-3 text-gray-800">15+ Years Experience</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-6">
+                                    <h4 class="text-lg font-semibold mb-4">Service Area</h4>
+                                    <div class="space-y-2">
+                                        <p class="text-gray-800">Serving the Phoenix Metro Area including:</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Mesa</span>
+                                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Tempe</span>
+                                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Chandler</span>
+                                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Gilbert</span>
+                                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Scottsdale</span>
+                                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Phoenix</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -628,301 +652,301 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- For Service Providers Section -->
-    <section id="for-providers" class="py-20 bg-blue-600 text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title text-white">For Service Providers</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-6">Grow Your Business With Textpert.net</h3>
-                    <p class="text-lg mb-6">
-                        Textpert.net helps service providers connect with new customers through our innovative 
-                        SMS-based lead generation platform. Get high-quality leads delivered directly to your phone.
-                    </p>
+        </section>
+    
+        <!-- For Service Providers Section -->
+        <section id="for-providers" class="py-20 bg-blue-600 text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title text-white">For Service Providers</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6">Grow Your Business With Textpert.net</h3>
+                        <p class="text-lg mb-6">
+                            Textpert.net helps service providers connect with new customers through our innovative 
+                            SMS-based lead generation platform. Get high-quality leads delivered directly to your phone.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 min-w-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-user-plus text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-1">Get More Clients</h4>
+                                    <p>Connect with potential customers who are actively seeking your services.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 min-w-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-hand-holding-usd text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-1">No Fixed Costs</h4>
+                                    <p>You negotiate directly with customers - no commissions or package pricing required.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 min-w-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-star text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-1">Build Your Reputation</h4>
+                                    <p>Showcase your services and collect reviews that help grow your business.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#provider-signup" class="cta-button bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-flex items-center">
+                            <i class="fas fa-user-plus mr-2"></i>
+                            Become a Service Provider
+                        </a>
+                    </div>
                     
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-start">
-                            <div class="h-10 w-10 min-w-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-user-plus text-blue-600"></i>
+                    <div>
+                        <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl">
+                            <div class="text-center mb-6">
+                                <div class="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-toolbox text-4xl text-blue-600"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-800">Business Dashboard</h3>
+                                <p class="text-gray-600">Manage your profile and customer interactions</p>
                             </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-1">Get More Clients</h4>
-                                <p>Connect with potential customers who are actively seeking your services.</p>
+                            
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="dashboard-card bg-blue-50 p-4 rounded-lg">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-semibold text-gray-800">New Leads</h4>
+                                        <span class="bg-blue-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">8</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">New customer inquiries waiting for your response</p>
+                                </div>
+                                
+                                <div class="dashboard-card bg-green-50 p-4 rounded-lg">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-semibold text-gray-800">Appointments</h4>
+                                        <span class="bg-green-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">3</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Upcoming scheduled appointments this week</p>
+                                </div>
+                                
+                                <div class="dashboard-card bg-yellow-50 p-4 rounded-lg">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-semibold text-gray-800">Reviews</h4>
+                                        <span class="bg-yellow-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">5</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">New customer reviews in the last 30 days</p>
+                                </div>
+                                
+                                <div class="dashboard-card bg-purple-50 p-4 rounded-lg">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-semibold text-gray-800">Messages</h4>
+                                        <span class="bg-purple-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">12</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Active customer conversations via SMS</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Performance Overview</h4>
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-gray-600">Response Rate</span>
+                                            <span class="text-sm font-medium text-gray-800">98%</span>
+                                        </div>
+                                        <div class="h-2 bg-gray-200 rounded-full">
+                                            <div class="h-2 bg-blue-600 rounded-full" style="width: 98%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-gray-600">Customer Satisfaction</span>
+                                            <span class="text-sm font-medium text-gray-800">4.9/5</span>
+                                        </div>
+                                        <div class="h-2 bg-gray-200 rounded-full">
+                                            <div class="h-2 bg-green-600 rounded-full" style="width: 96%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span class="text-sm text-gray-600">Lead Conversion</span>
+                                            <span class="text-sm font-medium text-gray-800">75%</span>
+                                        </div>
+                                        <div class="h-2 bg-gray-200 rounded-full">
+                                            <div class="h-2 bg-yellow-600 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="h-10 w-10 min-w-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-hand-holding-usd text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-1">No Fixed Costs</h4>
-                                <p>You negotiate directly with customers - no commissions or package pricing required.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="h-10 w-10 min-w-10 bg-white rounded-full flex items-center justify-center mr-4 mt-1">
-                                <i class="fas fa-star text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-1">Build Your Reputation</h4>
-                                <p>Showcase your services and collect reviews that help grow your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Testimonials -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">What Our Users Say</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+                    <!-- Testimonial 1 - Consumer -->
+                    <div class="testimonial-card bg-blue-50 p-6 rounded-xl relative">
+                        <div class="absolute -top-4 left-6 text-5xl text-blue-200">"</div>
+                        <div class="relative z-10">
+                            <p class="text-gray-600 mb-6">
+                                Finding a reliable plumber used to be so frustrating. With textpert.net, I just sent a text 
+                                and had three qualified plumbers to choose from within an hour. So convenient!
+                            </p>
+                            <div class="flex items-center">
+                                <div class="h-12 w-12 min-w-12 bg-blue-600 rounded-full mr-4"></div>
+                                <div>
+                                    <h4 class="font-semibold">Jessica R.</h4>
+                                    <p class="text-gray-500 text-sm">Homeowner, Scottsdale</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="#provider-signup" class="cta-button bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg inline-flex items-center">
+                    <!-- Testimonial 2 - Service Provider -->
+                    <div class="testimonial-card bg-green-50 p-6 rounded-xl relative">
+                        <div class="absolute -top-4 left-6 text-5xl text-green-200">"</div>
+                        <div class="relative z-10">
+                            <p class="text-gray-600 mb-6">
+                                As a small business owner, finding new clients can be challenging. textpert.net has helped me 
+                                grow my electrical business by providing quality leads that turn into loyal customers.
+                            </p>
+                            <div class="flex items-center">
+                                <div class="h-12 w-12 min-w-12 bg-green-600 rounded-full mr-4"></div>
+                                <div>
+                                    <h4 class="font-semibold">Michael T.</h4>
+                                    <p class="text-gray-500 text-sm">Electrician, Phoenix</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 - Consumer -->
+                    <div class="testimonial-card bg-purple-50 p-6 rounded-xl relative">
+                        <div class="absolute -top-4 left-6 text-5xl text-purple-200">"</div>
+                        <div class="relative z-10">
+                            <p class="text-gray-600 mb-6">
+                                I was looking for a life coach but wasn't sure how to find the right one. textpert.net made it 
+                                so easy! I sent a text, got matched with a coach who understood my needs, and we're still working together.
+                            </p>
+                            <div class="flex items-center">
+                                <div class="h-12 w-12 min-w-12 bg-purple-600 rounded-full mr-4"></div>
+                                <div>
+                                    <h4 class="font-semibold">David K.</h4>
+                                    <p class="text-gray-500 text-sm">Technology Professional, Tempe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Frequently Asked Questions</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3">How does textpert.net work?</h3>
+                            <p class="text-gray-600">
+                                It's simple! Just text us what service you need to 480-555-1212. We'll connect you with 
+                                qualified service providers in your area. You can communicate directly with them via text, 
+                                receive video solutions, participate in live streaming consultations, or schedule in-person visits.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3">Is there a fee to use textpert.net?</h3>
+                            <p class="text-gray-600">
+                                The service is completely free for consumers. There are no hidden fees or charges. 
+                                You pay only for the services you agree to with service providers.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3">How are service providers vetted?</h3>
+                            <p class="text-gray-600">
+                                We verify all service providers before they can join our platform. This includes checking 
+                                licenses, insurance, and business credentials. We also collect and display customer reviews 
+                                to help you make informed decisions.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3">What types of service providers can I find?</h3>
+                            <p class="text-gray-600">
+                                textpert.net connects you with a wide range of service providers, including home services 
+                                (plumbing, electrical, HVAC, etc.) and life services (coaching, fitness, nutrition, etc.). 
+                                Our directory is constantly growing to meet your needs.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3">How do I become a service provider on textpert.net?</h3>
+                            <p class="text-gray-600">
+                                To join as a service provider, click the "Become a Service Provider" button and complete the 
+                                application process. You'll need to provide your business information, credentials, and service details. 
+                                Once approved, you can start receiving leads and building your profile.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3">How is pricing determined?</h3>
+                            <p class="text-gray-600">
+                                textpert.net doesn't set prices for services. Service providers set their own rates, and you 
+                                negotiate directly with them. This ensures transparent pricing and allows you to find services 
+                                that fit your budget.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                        Have more questions? Contact us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Final CTA -->
+        <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Find the Perfect Service Provider?</h2>
+                <p class="text-xl mb-10 max-w-3xl mx-auto">
+                    Whether you need home services or life services, textpert.net connects you with qualified professionals 
+                    through a simple text message. Get started today!
+                </p>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="sms:+4805551212" class="cta-button bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg inline-flex items-center shadow-lg">
+                        <i class="fas fa-comment-dots mr-2 animated-icon"></i>
+                        Text 480-555-1212
+                    </a>
+                    <a href="#provider-signup" class="border-2 border-white py-4 px-8 rounded-full text-lg hover:bg-white hover:text-blue-600 transition inline-flex items-center">
                         <i class="fas fa-user-plus mr-2"></i>
                         Become a Service Provider
                     </a>
                 </div>
-                
-                <div>
-                    <div class="bg-white p-4 md:p-8 rounded-xl shadow-2xl">
-                        <div class="text-center mb-6">
-                            <div class="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-toolbox text-4xl text-blue-600"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800">Business Dashboard</h3>
-                            <p class="text-gray-600">Manage your profile and customer interactions</p>
-                        </div>
-                        
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="dashboard-card bg-blue-50 p-4 rounded-lg">
-                                <div class="flex justify-between mb-2">
-                                    <h4 class="font-semibold text-gray-800">New Leads</h4>
-                                    <span class="bg-blue-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">8</span>
-                                </div>
-                                <p class="text-gray-600 text-sm">New customer inquiries waiting for your response</p>
-                            </div>
-                            
-                            <div class="dashboard-card bg-green-50 p-4 rounded-lg">
-                                <div class="flex justify-between mb-2">
-                                    <h4 class="font-semibold text-gray-800">Appointments</h4>
-                                    <span class="bg-green-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">3</span>
-                                </div>
-                                <p class="text-gray-600 text-sm">Upcoming scheduled appointments this week</p>
-                            </div>
-                            
-                            <div class="dashboard-card bg-yellow-50 p-4 rounded-lg">
-                                <div class="flex justify-between mb-2">
-                                    <h4 class="font-semibold text-gray-800">Reviews</h4>
-                                    <span class="bg-yellow-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">5</span>
-                                </div>
-                                <p class="text-gray-600 text-sm">New customer reviews in the last 30 days</p>
-                            </div>
-                            
-                            <div class="dashboard-card bg-purple-50 p-4 rounded-lg">
-                                <div class="flex justify-between mb-2">
-                                    <h4 class="font-semibold text-gray-800">Messages</h4>
-                                    <span class="bg-purple-600 text-white h-6 w-6 rounded-full flex items-center justify-center text-sm">12</span>
-                                </div>
-                                <p class="text-gray-600 text-sm">Active customer conversations via SMS</p>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-6 bg-gray-50 p-4 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 mb-2">Performance Overview</h4>
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-sm text-gray-600">Response Rate</span>
-                                        <span class="text-sm font-medium text-gray-800">98%</span>
-                                    </div>
-                                    <div class="h-2 bg-gray-200 rounded-full">
-                                        <div class="h-2 bg-blue-600 rounded-full" style="width: 98%"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-sm text-gray-600">Customer Satisfaction</span>
-                                        <span class="text-sm font-medium text-gray-800">4.9/5</span>
-                                    </div>
-                                    <div class="h-2 bg-gray-200 rounded-full">
-                                        <div class="h-2 bg-green-600 rounded-full" style="width: 96%"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="text-sm text-gray-600">Lead Conversion</span>
-                                        <span class="text-sm font-medium text-gray-800">75%</span>
-                                    </div>
-                                    <div class="h-2 bg-gray-200 rounded-full">
-                                        <div class="h-2 bg-yellow-600 rounded-full" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">What Our Users Say</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-                <!-- Testimonial 1 - Consumer -->
-                <div class="testimonial-card bg-blue-50 p-6 rounded-xl relative">
-                    <div class="absolute -top-4 left-6 text-5xl text-blue-200">"</div>
-                    <div class="relative z-10">
-                        <p class="text-gray-600 mb-6">
-                            Finding a reliable plumber used to be so frustrating. With textpert.net, I just sent a text 
-                            and had three qualified plumbers to choose from within an hour. So convenient!
-                        </p>
-                        <div class="flex items-center">
-                            <div class="h-12 w-12 min-w-12 bg-blue-600 rounded-full mr-4"></div>
-                            <div>
-                                <h4 class="font-semibold">Jessica R.</h4>
-                                <p class="text-gray-500 text-sm">Homeowner, Scottsdale</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 - Service Provider -->
-                <div class="testimonial-card bg-green-50 p-6 rounded-xl relative">
-                    <div class="absolute -top-4 left-6 text-5xl text-green-200">"</div>
-                    <div class="relative z-10">
-                        <p class="text-gray-600 mb-6">
-                            As a small business owner, finding new clients can be challenging. textpert.net has helped me 
-                            grow my electrical business by providing quality leads that turn into loyal customers.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="h-12 w-12 min-w-12 bg-green-600 rounded-full mr-4"></div>
-                            <div>
-                                <h4 class="font-semibold">Michael T.</h4>
-                                <p class="text-gray-500 text-sm">Electrician, Phoenix</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 - Consumer -->
-                <div class="testimonial-card bg-purple-50 p-6 rounded-xl relative">
-                    <div class="absolute -top-4 left-6 text-5xl text-purple-200">"</div>
-                    <div class="relative z-10">
-                        <p class="text-gray-600 mb-6">
-                            I was looking for a life coach but wasn't sure how to find the right one. textpert.net made it 
-                            so easy! I sent a text, got matched with a coach who understood my needs, and we're still working together.
-                        </p>
-                        <div class="flex items-center">
-                            <div class="h-12 w-12 min-w-12 bg-purple-600 rounded-full mr-4"></div>
-                            <div>
-                                <h4 class="font-semibold">David K.</h4>
-                                <p class="text-gray-500 text-sm">Technology Professional, Tempe</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Frequently Asked Questions</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-3">How does textpert.net work?</h3>
-                        <p class="text-gray-600">
-                            It's simple! Just text us what service you need to 480-555-1212. We'll connect you with 
-                            qualified service providers in your area. You can communicate directly with them via text, 
-                            receive video solutions, participate in live streaming consultations, or schedule in-person visits.
-                        </p>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-3">Is there a fee to use textpert.net?</h3>
-                        <p class="text-gray-600">
-                            The service is completely free for consumers. There are no hidden fees or charges. 
-                            You pay only for the services you agree to with service providers.
-                        </p>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-3">How are service providers vetted?</h3>
-                        <p class="text-gray-600">
-                            We verify all service providers before they can join our platform. This includes checking 
-                            licenses, insurance, and business credentials. We also collect and display customer reviews 
-                            to help you make informed decisions.
-                        </p>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-3">What types of service providers can I find?</h3>
-                        <p class="text-gray-600">
-                            textpert.net connects you with a wide range of service providers, including home services 
-                            (plumbing, electrical, HVAC, etc.) and life services (coaching, fitness, nutrition, etc.). 
-                            Our directory is constantly growing to meet your needs.
-                        </p>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-3">How do I become a service provider on textpert.net?</h3>
-                        <p class="text-gray-600">
-                            To join as a service provider, click the "Become a Service Provider" button and complete the 
-                            application process. You'll need to provide your business information, credentials, and service details. 
-                            Once approved, you can start receiving leads and building your profile.
-                        </p>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h3 class="text-xl font-semibold mb-3">How is pricing determined?</h3>
-                        <p class="text-gray-600">
-                            textpert.net doesn't set prices for services. Service providers set their own rates, and you 
-                            negotiate directly with them. This ensures transparent pricing and allows you to find services 
-                            that fit your budget.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
-                    Have more questions? Contact us
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Find the Perfect Service Provider?</h2>
-            <p class="text-xl mb-10 max-w-3xl mx-auto">
-                Whether you need home services or life services, textpert.net connects you with qualified professionals 
-                through a simple text message. Get started today!
-            </p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
-                <a href="sms:+4805551212" class="cta-button bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg inline-flex items-center shadow-lg">
-                    <i class="fas fa-comment-dots mr-2 animated-icon"></i>
-                    Text 480-555-1212
-                </a>
-                <a href="#provider-signup" class="border-2 border-white py-4 px-8 rounded-full text-lg hover:bg-white hover:text-blue-600 transition inline-flex items-center">
-                    <i class="fas fa-user-plus mr-2"></i>
-                    Become a Service Provider
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
@@ -1009,11 +1033,11 @@
     
     <!-- Login Modal (Hidden by default) -->
     <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-xl p-8 max-w-md w-full">
+        <div class="bg-white rounded-xl p-6 max-w-md w-full">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-bold text-gray-800">Login</h3>
-                <button class="text-gray-500 hover:text-gray-700" onclick="document.getElementById('login-modal').classList.add('hidden')">
-                    <i class="fas fa-times"></i>
+                <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-opacity-20 transition duration-300" onclick="document.getElementById('login-modal').classList.add('hidden')">
+                    <i class="fas fa-times text-lg"></i>
                 </button>
             </div>
             
@@ -1045,5 +1069,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="assets/js/email-decode.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
