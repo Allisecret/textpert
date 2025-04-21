@@ -19,7 +19,7 @@
 
             <div class="header_menu">
                 <div class="flex items-center justify-end lg:hidden mb-6">
-                    <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-opacity-20 transition duration-300 toggle_menu" type="button">
+                    <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300 toggle_menu" type="button">
                         <i class="fa-solid fa-xmark text-lg"></i>
                     </button>
                 </div>
@@ -30,16 +30,16 @@
                     <a href="#faq" class="text-gray-600 hover:text-blue-600 transition">FAQ</a>
                     <div class="flex items-center space-x-4 lg:hidden">
                         <button class="text-blue-600 hover:text-blue-800 transition font-medium" type="button" onclick="document.getElementById('login-modal').classList.remove('hidden')">Login</button>
-                        <a href="#signup" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium">Sign Up</a>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium" type="button" onclick="document.getElementById('signup-modal').classList.remove('hidden')">Sign Up</button>
                     </div>
                 </div>
             </div>
             <div class="hidden lg:flex items-center space-x-4">
                 <button class="text-blue-600 hover:text-blue-800 transition font-medium" type="button" onclick="document.getElementById('login-modal').classList.remove('hidden')">Login</button>
-                <a href="#signup" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium">Sign Up</a>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium" type="button" onclick="document.getElementById('signup-modal').classList.remove('hidden')">Sign Up</button>
             </div>
             <div class="lg:hidden">
-                <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-opacity-20 transition duration-300 toggle_menu">
+                <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300 toggle_menu">
                     <i class="fas fa-bars text-lg"></i>
                 </button>
             </div>
@@ -1031,36 +1031,184 @@
         </div>
     </footer>
     
+    <!-- Sign Up Modal (Hidden by default) -->
+    <div id="signup-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-lg w-full">
+            <form id="signup-form" method="post" autocomplete="off">
+                <div class="flex flex-col" style="max-height: calc(100svh - 100px);">
+                    <div class="flex justify-between items-center px-6 pt-5 pb-3">
+                        <h3 class="text-2xl font-bold text-gray-800">Sign Up</h3>
+                        <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300" type="reset" onclick="document.getElementById('signup-modal').classList.add('hidden')">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="flex-grow px-6 pt-3 pb-6 overflow-y-auto">
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">First Name</label>
+                            <input name="firstName" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Last Name</label>
+                            <input name="lastName" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Company Name</label>
+                            <input name="companyName" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Industry</label>
+                            <input name="industry" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Email</label>
+                            <input name="email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Phone</label>
+                            <input name="phoneNumber" type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Address</label>
+                            <input name="address" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Zip code</label>
+                            <input name="zipCode" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Password</label>
+                            <input name="password" type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Password</label>
+                            <input name="confirmPassword" type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Sign Up</button>
+                        </div>
+
+                        <div class="mt-6 border-t border-gray-200 pt-4 text-center">
+                            <p class="text-gray-600 mb-2">Already have an account?</p>
+                            <button class="text-blue-600 font-medium hover:text-blue-800" type="reset" onclick="document.getElementById('signup-modal').classList.add('hidden');document.getElementById('login-modal').classList.remove('hidden')">Login Now</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Login Modal (Hidden by default) -->
     <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-xl p-6 max-w-md w-full">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-gray-800">Login</h3>
-                <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-opacity-20 transition duration-300" onclick="document.getElementById('login-modal').classList.add('hidden')">
-                    <i class="fas fa-times text-lg"></i>
-                </button>
-            </div>
-            
-            <form>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <div class="bg-white rounded-xl max-w-lg w-full">
+            <form id="login-form" method="post" autocomplete="off">
+                <div class="flex flex-col" style="max-height: calc(100svh - 100px);">
+                    <div class="flex justify-between items-center px-6 pt-5 pb-3">
+                        <h3 class="text-2xl font-bold text-gray-800">Login</h3>
+                        <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300" type="reset" onclick="document.getElementById('login-modal').classList.add('hidden')">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="flex-grow px-6 pt-3 pb-6 overflow-y-auto">
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Email</label>
+                            <input name="email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Password</label>
+                            <input name="password" type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Login</button>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <button class="text-blue-600 hover:text-blue-800" type="reset" type="reset" onclick="document.getElementById('login-modal').classList.add('hidden');document.getElementById('forgot-password-modal').classList.remove('hidden')">Forgot password?</button>
+                        </div>
+                        <div class="mt-6 border-t border-gray-200 pt-4 text-center">
+                            <p class="text-gray-600 mb-2">Don't have an account?</p>
+                            <button class="text-blue-600 font-medium hover:text-blue-800" type="reset" onclick="document.getElementById('login-modal').classList.add('hidden');document.getElementById('signup-modal').classList.remove('hidden')">Sign up now</button>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="mb-6">
-                    <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
-                    <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                
+            </form>
+        </div>
+    </div>
+
+    <!-- forgot password Modal (Hidden by default) -->
+    <div id="forgot-password-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-lg w-full">
+            <form id="forgot-password-form" method="post" autocomplete="off">
+                <div class="flex flex-col" style="max-height: calc(100svh - 100px);">
+                    <div class="flex justify-between items-center px-6 pt-5 pb-3">
+                        <h3 class="text-2xl font-bold text-gray-800">Forgot Password</h3>
+                        <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300" type="reset" onclick="document.getElementById('forgot-password-modal').classList.add('hidden')">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="flex-grow px-6 pt-3 pb-6 overflow-y-auto">
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Email</label>
+                            <input name="email" type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Send OTP</button>
+                        </div>
+                    </div>
                 </div>
-                
-                <button type="button" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Login</button>
-                
-                <div class="mt-4 text-center">
-                    <a href="#forgot-password" class="text-blue-600 hover:text-blue-800">Forgot password?</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- otp Modal (Hidden by default) -->
+    <div id="otp-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-lg w-full">
+            <form id="otp-form" method="post" autocomplete="off">
+                <div class="flex flex-col" style="max-height: calc(100svh - 100px);">
+                    <div class="flex justify-between items-center px-6 pt-5 pb-3">
+                        <h3 class="text-2xl font-bold text-gray-800">OTP Form</h3>
+                        <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300" type="reset" onclick="document.getElementById('forgot-password-modal').classList.add('hidden')">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="flex-grow px-6 pt-3 pb-6 overflow-y-auto">
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">OTP</label>
+                            <input name="top" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Send OTP</button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="mt-6 border-t border-gray-200 pt-4 text-center">
-                    <p class="text-gray-600 mb-2">Don't have an account?</p>
-                    <a href="#signup" class="text-blue-600 font-medium hover:text-blue-800">Sign up now</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- password reset Modal (Hidden by default) -->
+    <div id="password-reset-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl max-w-lg w-full">
+            <form id="password-reset-form" method="post" autocomplete="off">
+                <div class="flex flex-col" style="max-height: calc(100svh - 100px);">
+                    <div class="flex justify-between items-center px-6 pt-5 pb-3">
+                        <h3 class="text-2xl font-bold text-gray-800">Password Reset</h3>
+                        <button class="w-9 h-9 rounded-lg bg-white bg-opacity-10 border hover:bg-gray-50 transition duration-300" type="reset" onclick="document.getElementById('forgot-password-modal').classList.add('hidden')">
+                            <i class="fas fa-times text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="flex-grow px-6 pt-3 pb-6 overflow-y-auto">
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">New Password</label>
+                            <input name="newPassword" type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="text-sm block text-gray-700 font-medium mb-2">Confirm Password</label>
+                            <input name="confirmPassword" type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">Send OTP</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
