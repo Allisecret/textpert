@@ -89,4 +89,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // forgot passwrod form
+    const forgotPasswordForm = document.getElementById('forgot-password-form');
+    if (forgotPasswordForm) {
+        forgotPasswordForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // This is crucial to stop the form from submitting traditionally
+
+            const email = forgotPasswordForm.email.value.trim();
+
+            if (!email) {
+                alert('Please enter your email address');
+                return;
+            }
+
+            try {
+                const response = await fetch('https://get-connected-backend.dev.quantumos.ai/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+                console.log('Login response:', data);
+
+                if (response.ok && data ?.data ?.token) {
+                    localStorage.setItem('token', data.data.token);
+                    localStorage.setItem('userInfo', JSON.stringify(data.data.user));
+                    localStorage.setItem("isLoggedIn", true);
+                    window.location.href = 'index.html';
+                    alert('Login Successful!')
+                    alert(data.message || 'Login failed.');
+                }
+            } catch (err) {
+                console.error('Login error:', err);
+                alert('An error occurred during login.');
+            }
+        });
+    }
 });
