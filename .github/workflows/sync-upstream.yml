@@ -1,0 +1,67 @@
+name: Sync Fork with Upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  sync-fork:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+          
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          
+      - name: Add upstream remote
+        run: git remote add upstream https://github.com/Roeich/textpert.git
+          
+      - name: Fetch upstream
+        run: |
+          git fetch upstream
+          git fetch upstream --tags
+          
+      - name: Backup important files
+        run: |
+          mkdir -p /tmp/backup
+          if [ -f "CNAME" ]; then
+            cp CNAME /tmp/backup/
+          fi
+          if [ -d ".github" ]; then
+            cp -r .github /tmp/backup/
+          fi
+          
+      - name: Sync with upstream
+        run: |
+          git checkout main
+          git reset --hard upstream/main
+          
+      - name: Restore important files
+        run: |
+          if [ -f "/tmp/backup/CNAME" ]; then
+            cp /tmp/backup/CNAME ./
+          fi
+          if [ -d "/tmp/backup/.github" ]; then
+            cp -r /tmp/backup/.github ./
+          fi
+          
+      - name: Commit restored files if changed
+        run: |
+          if [ -f "CNAME" ] || [ -d ".github" ]; then
+            git add -f CNAME .github 2>/dev/null || true
+            git diff --staged --quiet || git commit -m "Restore preserved files after sync"
+          fi
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
